@@ -7,6 +7,7 @@ import pages.FinalLoginPage;
 import pages.HomePage;
 import pages.SettingsPage;
 
+
 public class MainStep extends AbstractStep {
 
     private FinalLoginPage loginPage;

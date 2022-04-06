@@ -1,9 +1,13 @@
 package forms;
 
 import components.AbstractComponent;
+import lombok.Data;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import pages.FinalLoginPage;
 
 public class DropdownProfile extends AbstractComponent {
 
@@ -11,10 +15,10 @@ public class DropdownProfile extends AbstractComponent {
             "//label[contains(.,'%s')]/ancestor::div[contains(@class,'formSep')]//select";
     private String label;
     private By dropdownLocator;
-    private static final String OPTION_LIST_PATTERN =
-            "//label[contains(.,'%s')]/ancestor::div[contains(@class,'formSep')]" +
+    private static final String OPTION_LIST_PATTERN = "//div[contains(@class,'formSep')]" +
                     "//select//option[text()='%s']";
 
+    Logger log = LogManager.getLogger(DropdownProfile.class);
 
     public DropdownProfile(WebDriver driver,String label) {
         super(driver);
@@ -27,14 +31,13 @@ public class DropdownProfile extends AbstractComponent {
         return driver.findElement(dropdownLocator).isDisplayed();
     }
 
-    private void openOptions() {
-        driver.findElement(dropdownLocator).click();
-    }
+
 
     public void selectOption(String optionName) {
-        openOptions();
         By optionLocator = By.xpath(String.format(OPTION_LIST_PATTERN, optionName));
         explicitlyWait.until(ExpectedConditions.visibilityOfElementLocated(optionLocator));
+        log.info("Select [{}]",optionName,"optionName");
         driver.findElement(optionLocator).click();
+        explicitlyWait.until(ExpectedConditions.textToBePresentInElementLocated(dropdownLocator, optionName));
     }
 }

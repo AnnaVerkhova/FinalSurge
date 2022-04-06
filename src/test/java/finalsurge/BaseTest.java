@@ -24,14 +24,12 @@ public class BaseTest {
         chromeOptions.addArguments("--ignore-popup-blocking");
 //        chromeOptions.addArguments("--ignore-certificate-errors");
         driver = new ChromeDriver(chromeOptions);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         mainStep = new MainStep(driver);
-
     }
 
     @AfterMethod(alwaysRun = true)
     public void tearDown() {
         driver.quit();
     }
-
 }
