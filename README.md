@@ -14,4 +14,4 @@ I used this site for  graduation project.
 |UserProfil page| Open UserProfil page|+|
 |UserProfil page|Fill in the data in UserProfil page |+|
 |AddWorkout page| Create a running workout |+|
-|AddWorkout page| Create a swim workout |+|
+

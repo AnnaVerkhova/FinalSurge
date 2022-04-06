@@ -2,3 +2,5 @@
 /.idea/misc.xml
 /.idea/
 /allure-results/
+/.allure/
+/target/
