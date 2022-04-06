@@ -1,6 +1,8 @@
 package pages;
 
 import components.buttons.EditProfileButton;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -14,6 +16,8 @@ public class SettingsPage extends BasePage{
         super(driver);
     }
 
+    Logger log = LogManager.getLogger(SettingsPage.class);
+
     @Override
     public void waitPageLoaded() {
         explicitlyWait.until(ExpectedConditions.visibilityOfElementLocated(HEADER));
@@ -26,8 +30,7 @@ public class SettingsPage extends BasePage{
     }
 
     public void openEditProfileForm(){
+        log.info("Click [{}] button ","Edit Profile");
         driver.findElement(EditProfileButton.EDITPROFILE_BUTTON_LABEL).click();
     }
-
-
 }

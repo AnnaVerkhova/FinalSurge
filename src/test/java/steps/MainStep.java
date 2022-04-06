@@ -7,6 +7,7 @@ import org.testng.Assert;
 import pages.*;
 import utils.WorkoutModelUtils;
 
+
 public class MainStep extends AbstractStep {
 
     private FinalLoginPage loginPage;

@@ -5,9 +5,12 @@ import lombok.Data;
 @Data
 public class ProfileModel {
 
+    String Name;
+    String Email;
     String Gender;
     String Birthday;
-    int Weight;
+    String Weight;
+    String WeightType;
     String Country;
     String State;
     String City;
@@ -15,6 +18,5 @@ public class ProfileModel {
 
     public ProfileModel() {
     }
-
 
 }

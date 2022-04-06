@@ -24,4 +24,5 @@ public class EditProfilePage extends BasePage {
         driver.get(BASE_URL);
         return this;
     }
+
 }
