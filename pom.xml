@@ -16,7 +16,7 @@
         <suite>SuiteTest</suite>
         <default.browser>CHROME</default.browser>
         <aspectj.version>1.9.8</aspectj.version>
-        <allure-testng.version>2.17.2</allure-testng.version>
+        <allure-testng.version>2.17.3</allure-testng.version>
         <allure-maven.version>2.11.2</allure-maven.version>
     </properties>
     <dependencies>
@@ -65,10 +65,16 @@
                         <browser>${default.browser}</browser>
                         <email>werxowaanna1991@gmail.com</email>
                         <password>1234567890Anna</password>
+                        <systemProperties>
+                            <property>
+                                <name>allure.results.directory</name>
+                                <value>${project.build.directory}/allure-results</value>
+                            </property>
+                        </systemProperties>
                     </systemPropertyVariables>
-                    <suiteXmlFiles>
-                        <suiteXmlFile>${testNgSuiteFilePath}${suite}.xml</suiteXmlFile>
-                    </suiteXmlFiles>
+<!--                    <suiteXmlFiles>-->
+<!--                        <suiteXmlFile>${testNgSuiteFilePath}${suite}.xml</suiteXmlFile>-->
+<!--                    </suiteXmlFiles>-->
                 </configuration>
                 <dependencies>
                     <dependency>
@@ -82,14 +88,6 @@
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-maven</artifactId>
                 <version>${allure-maven.version}</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>16</source>
-                    <target>16</target>
-                </configuration>
             </plugin>
         </plugins>
     </build>
