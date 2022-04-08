@@ -1,5 +1,4 @@
-/.idea/runConfigurations.xml
-/.idea/misc.xml
+
 /.idea/
 /allure-results/
 /.allure/
@@ -7,3 +6,4 @@
 
 
 
+/src/test/resources/webdrivers/mac/
