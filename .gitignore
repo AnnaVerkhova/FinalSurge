@@ -4,6 +4,8 @@
 /allure-results/
 /.allure/
 /target/
-/src/test/resources/webdrivers/
+/src/test/resources/webdrivers/linux/
+/src/test/resources/webdrivers/mac/
+/src/test/resources/webdrivers/windows/
 
 
