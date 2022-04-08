@@ -32,6 +32,7 @@ public class InputProfile extends AbstractComponent {
     }
 
     public void insert(String text) {
+       // driver.findElement(inputLocator).clear();
         log.info("Insert [{}] into [{}] text",text,"text");
         driver.findElement(inputLocator).sendKeys(text);
     }
@@ -42,6 +43,7 @@ public class InputProfile extends AbstractComponent {
         log.info("Click [{}] button ","click body");
         driver.findElement(CLICK_BODY).click();
     }
+
 
     public static String delete = Keys.chord(Keys.CONTROL, "a") + Keys.DELETE;
 
