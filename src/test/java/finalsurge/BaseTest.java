@@ -19,7 +19,7 @@ public class BaseTest {
 
     @BeforeMethod
     public void setup() {
-        String driverPath = PropertyUtils.getEnv("driver_path");
+        String driverPath = PropertyUtils.getEnv("win_driver_path");
         System.setProperty("webdriver.chrome.driver", driverPath);
         ChromeOptions options = new ChromeOptions();
 //        options.addArguments("--headless");
