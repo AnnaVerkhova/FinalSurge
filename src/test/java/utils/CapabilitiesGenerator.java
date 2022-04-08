@@ -25,5 +25,4 @@ public class CapabilitiesGenerator {
         //options.addArguments("--disable-gpu"); //https://stackoverflow.com/questions/51959986/how-to-solve-selenium-chromedriver-timed-out-receiving-message-from-renderer-exc
         return options;
     }
-
 }
