@@ -5,5 +5,4 @@
 /.allure/
 /target/
 
-/src/test/resources/webdrivers/
-/src/test/resources/webdrivers/mac/
+
