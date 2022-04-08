@@ -5,8 +5,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import steps.AddWorkoutSteps;
 import steps.MainStep;
+import utils.CapabilitiesGenerator;
+import utils.PropertyUtils;
 
 import java.time.Duration;
 
@@ -18,13 +19,14 @@ public class BaseTest {
 
     @BeforeMethod
     public void setup() {
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
-        ChromeOptions chromeOptions = new ChromeOptions();
-//        chromeOptions.addArguments("--headless");
-        chromeOptions.addArguments("--disable-notifications");
-        chromeOptions.addArguments("--ignore-popup-blocking");
-//        chromeOptions.addArguments("--ignore-certificate-errors");
-        driver = new ChromeDriver(chromeOptions);
+        String driverPath = PropertyUtils.getEnv("driver_path");
+        System.setProperty("webdriver.chrome.driver", driverPath);
+        ChromeOptions options = new ChromeOptions();
+//        options.addArguments("--headless");
+//        options.addArguments("--disable-notifications");
+//        options.addArguments("--ignore-popup-blocking");
+//        options.addArguments("--ignore-certificate-errors");
+        driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         mainStep = new MainStep(driver);
     }

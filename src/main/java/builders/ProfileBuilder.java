@@ -1,12 +1,8 @@
 package builders;
 
 
-import lombok.Getter;
-import lombok.Setter;
 import model.ProfileModel;
 
-@Setter
-@Getter
 public class ProfileBuilder {
 
     public ProfileBuilder(ProfileModel profileModel) {

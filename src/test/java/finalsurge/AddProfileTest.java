@@ -2,7 +2,6 @@ package finalsurge;
 
 
 import components.buttons.SaveChangesButton;
-import forms.InputProfile;
 import io.qameta.allure.Step;
 import model.ProfileModel;
 import org.apache.logging.log4j.LogManager;
@@ -10,6 +9,7 @@ import org.apache.logging.log4j.Logger;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 import utils.ProfileModelUtils;
+
 import static forms.InputProfile.delete;
 
 public class AddProfileTest extends BaseTest {

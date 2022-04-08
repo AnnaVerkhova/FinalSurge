@@ -1,11 +1,9 @@
 package steps;
 
 import io.qameta.allure.Step;
-import model.WorkoutModel;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 import pages.*;
-import utils.WorkoutModelUtils;
+import utils.PropertyUtils;
 
 
 public class MainStep extends AbstractStep {
@@ -16,8 +14,10 @@ public class MainStep extends AbstractStep {
     private EditProfilePage editProfilePage;
     private AddWorkoutSteps addWorkoutSteps;
 
-    private static final String VALID_LOGIN = System.getProperty("login");
-    public static final String VALID_PASSWORD = System.getProperty("password");
+    private static final String VALID_LOGIN = PropertyUtils.getEnv("login");
+            //System.getProperty("login");
+    public static final String VALID_PASSWORD =PropertyUtils.getEnv("password");
+    //System.getProperty("password");
 
     public MainStep(WebDriver driver) {
         super(driver);

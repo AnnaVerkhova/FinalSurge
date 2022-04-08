@@ -11,7 +11,7 @@ I used this site for  graduation project.
 |----|----|------|
 |Login page| Valid login|+|
 |Home page |Open home page|+|
-|UserProfil page| Open UserProfil page|+|
-|UserProfil page|Fill in the data in UserProfil page |+|
+|UserProfile page| Open UserProfile page|+|
+|UserProfile page|Fill in the data in UserProfile page |+|
 |AddWorkout page| Create a running workout |+|
 

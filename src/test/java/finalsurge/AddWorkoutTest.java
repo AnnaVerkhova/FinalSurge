@@ -1,7 +1,6 @@
 package finalsurge;
 
 import model.WorkoutModel;
-
 import org.testng.annotations.Test;
 import utils.WorkoutModelUtils;
 
@@ -18,9 +17,6 @@ public class AddWorkoutTest extends BaseTest{
                 .addWorkout()
                 .createNewWorkout(testWorkout)
                 .validateWorkoutCreated(testWorkoutTwo);
-
-
-
 
     }
 }

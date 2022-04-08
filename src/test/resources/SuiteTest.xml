@@ -6,15 +6,15 @@
     <test name="test 1">
         <parameter name="keyword" value="keyValue"/>
         <classes>
+            <class name="finalsurge.AddProfileTest">
+            </class>
+        </classes>
+    </test>
+    <test name="test 2">
+        <parameter name="keyword" value="keyValue"/>
+        <classes>
             <class name="finalsurge.AddWorkoutTest">
             </class>
         </classes>
     </test>
-<!--    <test name="test 2">-->
-<!--        <parameter name="keyword" value="keyValue"/>-->
-<!--        <classes>-->
-<!--            <class name="finalsurge.AddProfileTest">-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
 </suite>

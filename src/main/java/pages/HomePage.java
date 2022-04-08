@@ -1,6 +1,5 @@
 package pages;
 
-import components.buttons.EditProfileButton;
 import components.buttons.SettingsButton;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
