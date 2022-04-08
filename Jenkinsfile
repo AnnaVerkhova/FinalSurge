@@ -10,13 +10,13 @@ pipeline {
         stage('Build') {
             steps {
                 // Get some code from a GitHub repository
-                git 'https://github.com/AnnaVerkhova/FinalSurge.git'
+                git branch: '$BRANCH', url:'https://github.com/AnnaVerkhova/FinalSurge.git'
 
                 // Run Maven on a Unix agent.
-              //  sh "mvn -Dmaven.test.failure.ignore=true clean package"
+               sh "mvn clean test -Dmaven.test.failure.ignore=true -Dmaven.compiler.source=11 -Dmaven.compiler.target=11"
 
                 // To run Maven on a Windows agent, use
-                 bat "mvn clean test -Dmaven.test.failure.ignore=true -Dmaven.compiler.source=11 -Dmaven.compiler.target=11 -DthreadCount=1"
+                 //bat "mvn clean test -Dmaven.test.failure.ignore=true -Dmaven.compiler.source=11 -Dmaven.compiler.target=11"
             }
 
             post {
@@ -24,7 +24,20 @@ pipeline {
                 // failed, record the test results and archive the jar file.
                 success {
                     junit '**/target/surefire-reports/TEST-*.xml'
-                    archiveArtifacts 'target/*.jar'
+                }
+            }
+        }
+
+        stage('reports') {
+            steps {
+                script {
+                     allure([
+                             includeProperties: false,
+                             jdk: '',
+                             properties: [],
+                             reportBuildPolicy: 'ALWAYS',
+                             results: [[path: 'target/allure-results']]
+                     ])
                 }
             }
         }
