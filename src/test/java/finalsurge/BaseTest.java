@@ -26,7 +26,7 @@ public class BaseTest {
 //        options.addArguments("--disable-notifications");
 //        options.addArguments("--ignore-popup-blocking");
 //        options.addArguments("--ignore-certificate-errors");
-        driver = new ChromeDriver(options);
+        driver = new ChromeDriver(CapabilitiesGenerator.getChromeOptions());
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         mainStep = new MainStep(driver);
     }

@@ -4,3 +4,4 @@
 /allure-results/
 /.allure/
 /target/
+/src/test/resources/webDrivers/
