@@ -32,11 +32,13 @@ public class InputProfile extends AbstractComponent {
     }
 
     public void insert(String text) {
+        driver.findElement(inputLocator).clear();
         log.info("Insert [{}] into [{}] text",text,"text");
         driver.findElement(inputLocator).sendKeys(text);
     }
 
     public void insertBirthDay(String text) {
+        driver.findElement(inputLocator).clear();
         log.info("Insert [{}] into [{}] text",text,"text");
         driver.findElement(inputLocator).sendKeys(text);
         log.info("Click [{}] button ","click body");

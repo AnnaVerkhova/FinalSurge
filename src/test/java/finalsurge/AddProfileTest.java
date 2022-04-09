@@ -31,23 +31,23 @@ public class AddProfileTest extends BaseTest {
 
     }
 
-    @Step("Удаление данных профиля")
-    @AfterMethod
-    public void cleanTestData() {
-        ProfileModel profileModel = new ProfileModel();
-        profileModel.setBirthday(delete);
-        profileModel.setWeight(delete);
-        profileModel.setCountry("Select Country...");
-        profileModel.setState("Select Region...");
-        profileModel.setCity(delete);
-        profileModel.setZip(delete);
-        mainStep
-                .openSettingPage()
-                .openEditProfilePage()
-                .fillProfileForm(profileModel)
-        ;
-        log.info("Click [{}] button ","save");
-        driver.findElement(SaveChangesButton.SAVE_CHANGES_BUTTON_LABEL).click();
-    }
+//    @Step("Удаление данных профиля")
+//    @AfterMethod
+//    public void cleanTestData() {
+//        ProfileModel profileModel = new ProfileModel();
+//        profileModel.setBirthday(delete);
+//        profileModel.setWeight(delete);
+//        profileModel.setCountry("Select Country...");
+//        profileModel.setState("Select Region...");
+//        profileModel.setCity(delete);
+//        profileModel.setZip(delete);
+//        mainStep
+//                .openSettingPage()
+//                .openEditProfilePage()
+//                .fillProfileForm(profileModel)
+//        ;
+//        log.info("Click [{}] button ","save");
+//        driver.findElement(SaveChangesButton.SAVE_CHANGES_BUTTON_LABEL).click();
+//    }
 }
 

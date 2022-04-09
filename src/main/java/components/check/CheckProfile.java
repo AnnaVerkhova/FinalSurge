@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class CheckProfile extends AbstractComponent {
 
-    public static final String PROFILE_TEXT_DATA_FIELD = "//div[@class='w-box-content cnt_a user_profile']//div[@class='span10']/p[contains(.,'%s')]";
+    public static final String PROFILE_TEXT_DATA_FIELD = "//p[@class='formSep' and contains(.,'%s')]";
 
     String label;
     By textFieldLocator;
