@@ -45,3 +45,4 @@ public class InputProfile extends AbstractComponent {
         driver.findElement(CLICK_BODY).click();
     }
 }
+
