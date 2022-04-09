@@ -45,6 +45,6 @@ public class InputProfile extends AbstractComponent {
         driver.findElement(CLICK_BODY).click();
     }
 
-    public static String delete = Keys.chord(Keys.CONTROL, "a") + Keys.DELETE;
+
 
 }

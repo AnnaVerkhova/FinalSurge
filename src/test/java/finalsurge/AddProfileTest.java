@@ -10,7 +10,6 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 import utils.ProfileModelUtils;
 
-import static forms.InputProfile.delete;
 
 public class AddProfileTest extends BaseTest {
 
