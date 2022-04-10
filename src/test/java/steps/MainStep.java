@@ -13,11 +13,12 @@ public class MainStep extends AbstractStep {
     private SettingsPage settingsPage;
     private EditProfilePage editProfilePage;
     private AddWorkoutSteps addWorkoutSteps;
+    private LogoutPage logoutPage;
 
     private static final String VALID_LOGIN = PropertyUtils.getEnv("login");
-            //System.getProperty("login");
+
     public static final String VALID_PASSWORD =PropertyUtils.getEnv("password");
-    //System.getProperty("password");
+
 
     public MainStep(WebDriver driver) {
         super(driver);
@@ -54,6 +55,15 @@ public class MainStep extends AbstractStep {
         addWorkoutSteps.addWorkout();
         validatePageIsLoaded(new AddWorkoutPage(driver));
         return new AddWorkoutSteps(driver);
+    }
+
+    @Step("Logout")
+    public MainStep logout(){
+        homePage = new HomePage(driver);
+        homePage.clickLogout();
+        logoutPage = new LogoutPage(driver);
+        validatePageIsLoaded(new LogoutPage(driver));
+        return this;
     }
 }
 

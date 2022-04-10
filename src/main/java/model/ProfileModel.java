@@ -18,5 +18,4 @@ public class ProfileModel {
 
     public ProfileModel() {
     }
-
 }

@@ -6,18 +6,21 @@ public class CapabilitiesGenerator {
 
     public static ChromeOptions getChromeOptions() {
         ChromeOptions options = new ChromeOptions();
-        String driverPath = "src/test/resources/webdrivers";
         String os = System.getProperty("os.name").toLowerCase();
-        System.out.println("Operational system: " + os + "; Driver path: " + driverPath);
+        String driverPath= null;
         if (os.contains("win")) {
-            System.setProperty("webdriver.chrome.driver", driverPath + "/Windows/chromedriver.exe");
-        } else if (os.contains("webdrivers/mac")) {
-            System.setProperty("webdriver.chrome.driver", driverPath + "/MAC/chromedriver");
+            driverPath = PropertyUtils.getEnv("win_driver_path");
+            System.setProperty("webdriver.chrome.driver", driverPath);
+        } else if (os.contains("mac")) {
+            driverPath = PropertyUtils.getEnv("mac_driver_path");
+            System.setProperty("webdriver.chrome.driver", driverPath);
         }
+
+        System.out.println("Operational system: " + os + "; Driver path: " + driverPath);
         options.addArguments("--ignore-certificate-errors");
         options.addArguments("--disable-popup-blocking");
         options.addArguments("--disable-notifications");
-        //options.addArguments("--headless"); // only if you are ACTUALLY running headless
+         options.addArguments("--headless"); // only if you are ACTUALLY running headless
         //options.addArguments("--no-sandbox"); //https://stackoverflow.com/a/50725918/1689770
         //options.addArguments("--disable-infobars"); //https://stackoverflow.com/a/43840128/1689770
         //options.addArguments("--disable-dev-shm-usage"); //https://stackoverflow.com/a/50725918/1689770
