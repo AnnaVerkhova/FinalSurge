@@ -19,7 +19,6 @@ public class BaseTest {
 
     @BeforeMethod
     public void setup() {
-        System.out.println(System.getProperty("webdriver.chrome.driver"));
         driver = new ChromeDriver(CapabilitiesGenerator.getChromeOptions());
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         mainStep = new MainStep(driver);
