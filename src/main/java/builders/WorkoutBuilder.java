@@ -5,6 +5,7 @@ import model.WorkoutModel;
 public class WorkoutBuilder {
 
     WorkoutModel workoutModel = new WorkoutModel();
+
     public WorkoutBuilder() {
 
     }

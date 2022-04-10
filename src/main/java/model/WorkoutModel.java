@@ -1,12 +1,9 @@
 package model;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+
 
 @Data
-@Getter
-@Setter
 public class WorkoutModel {
     String WorkoutName;
     String WorkoutDescription;

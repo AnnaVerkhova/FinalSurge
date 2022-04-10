@@ -43,8 +43,8 @@ public class AddWorkoutSteps extends AbstractStep {
         new InputWorkout(driver, "Duration").input(String.valueOf(workoutModel.getDuration()));
         new InputWorkout(driver, "MinHR").input(String.valueOf(workoutModel.getMinHR()));
         new InputWorkout(driver, "kCal").input(workoutModel.getCaloriesBurned());
-        new InputWorkout(driver, "hf_great").click();
-        new InputWorkout(driver, "IsRace").click2();
+        new InputWorkout(driver, "hf_great").clickHowIFeel();
+        new InputWorkout(driver, "IsRace").clickCheckBoxMarkAsRace();
         new InputWorkout(driver, "Pace").input(String.valueOf(workoutModel.getPace()));
         new DropdownWorkout(driver, "WorkoutTime").selectOption(workoutModel.getTimeOfDay());
         new DropdownWorkout(driver, "PerEffort").selectOption2(workoutModel.getPerceivedEffort());

@@ -1,12 +1,15 @@
 package forms;
 
 import components.AbstractComponent;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.FinalLoginPage;
 
 public class DropdownWorkout extends AbstractComponent {
     private String label;
@@ -18,6 +21,8 @@ public class DropdownWorkout extends AbstractComponent {
 
     private static final String OPTION_LIST_PATTERN_TIME = "//ul//li[contains(.,'%s')]";
      private static final String OPTION_LIST_PATTERN_EFFORT = "//option[contains(.,'%s')]";
+
+    Logger log = LogManager.getLogger(FinalLoginPage.class);
 
     public DropdownWorkout(WebDriver driver, String label) {
         super(driver);

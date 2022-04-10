@@ -6,14 +6,17 @@ public class CapabilitiesGenerator {
 
     public static ChromeOptions getChromeOptions() {
         ChromeOptions options = new ChromeOptions();
-        String driverPath = "src/test/resources/webdrivers";
         String os = System.getProperty("os.name").toLowerCase();
-        System.out.println("Operational system: " + os + "; Driver path: " + driverPath);
+        String driverPath= null;
         if (os.contains("win")) {
-            System.setProperty("webdriver.chrome.driver", driverPath + "/Windows/chromedriver.exe");
+            driverPath = PropertyUtils.getEnv("win_driver_path");
+            System.setProperty("webdriver.chrome.driver", driverPath);
         } else if (os.contains("mac")) {
-            System.setProperty("webdriver.chrome.driver", driverPath + "/mac/chromedriver");
+            driverPath = PropertyUtils.getEnv("mac_driver_path");
+            System.setProperty("webdriver.chrome.driver", driverPath);
         }
+        //TODO add logger
+        System.out.println("Operational system: " + os + "; Driver path: " + driverPath);
         options.addArguments("--ignore-certificate-errors");
         options.addArguments("--disable-popup-blocking");
         options.addArguments("--disable-notifications");
