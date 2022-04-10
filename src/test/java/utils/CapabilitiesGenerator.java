@@ -11,7 +11,7 @@ public class CapabilitiesGenerator {
         System.out.println("Operational system: " + os + "; Driver path: " + driverPath);
         if (os.contains("win")) {
             System.setProperty("webdriver.chrome.driver", driverPath + "/Windows/chromedriver.exe");
-        } else if (os.contains("webdriver/mac")) {
+        } else if (os.contains("mac")) {
             System.setProperty("webdriver.chrome.driver", driverPath);
         }
         options.addArguments("--ignore-certificate-errors");
