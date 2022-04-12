@@ -20,8 +20,8 @@ public class ProfileModelUtils {
 
     public static ProfileModel checkResults() {
         ProfileBuilder.newValues()
-                .setName("Anna Verkhova")
-                .setEmail("werxowaanna1991@gmail.com")
+//                .setName("Anna Verkhova")
+//                .setEmail("werxowaanna1991@gmail.com")
                 .setGender("Female")
                 .setBirthday("11/20/1991")
                 .setWeight("48")

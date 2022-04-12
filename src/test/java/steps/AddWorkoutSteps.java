@@ -56,11 +56,11 @@ public class AddWorkoutSteps extends AbstractStep {
 
     @Step("Проверка правильно созданной тренировки")
     public void validateWorkoutCreated(WorkoutModel expectedModel) {
-        WorkoutModel actualModel = getCreatedWorkout();
+        WorkoutModel workoutModel = getCreatedWorkout();
         Assert.assertEquals(
-                actualModel,
+                workoutModel,
                 expectedModel,
-                String.format("New workout is not valid: %s", actualModel)
+                String.format("New workout is not valid: %s", workoutModel)
         );
     }
 
@@ -76,6 +76,6 @@ public class AddWorkoutSteps extends AbstractStep {
         workoutModel.setPerceivedEffort(new CreatedWorkoutComponent(driver, "Perceived Effort").getValueWorkout());
         workoutModel.setMinHR(new CreatedWorkoutComponent(driver, "Min HR:").getValueMinAndCalories());
         workoutModel.setCaloriesBurned(new CreatedWorkoutComponent(driver, "Calories Burned:").getValueMinAndCalories());
-        return new WorkoutModel();
+        return workoutModel;
     }
 }

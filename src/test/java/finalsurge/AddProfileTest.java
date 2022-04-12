@@ -1,6 +1,7 @@
 package finalsurge;
 
 
+import builders.ProfileBuilder;
 import model.ProfileModel;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -12,7 +13,8 @@ import utils.TestListener;
 public class AddProfileTest extends BaseTest {
 
     ProfileModel testProfile = ProfileModelUtils.getDefaultProfileModel();
-    ProfileModel testProfile2 = ProfileModelUtils.checkResults();
+    ProfileModel testProfile2 = ProfileBuilder.defaultProfile().build();
+
 
     @Test(description = "Тестирование нового профиля")
     public void addNewProfileTest() {

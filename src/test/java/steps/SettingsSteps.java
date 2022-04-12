@@ -32,11 +32,11 @@ public class SettingsSteps extends AbstractStep {
         Assert.assertEquals(
                 actualModel,
                 expectedModel,
-                String.format("Account is not valid: %s", actualModel)
+                String.format("Profile is not valid: %s", actualModel)
         );
     }
 
-    private ProfileModel getActualProfile( ) {
+    private ProfileModel getActualProfile() {
         ProfileModel actualModel = new ProfileModel();
         actualModel.setGender(new CheckProfile(driver, "Gender").getValue());
         actualModel.setBirthday(new CheckProfile(driver, "Birthday").getValue());
@@ -46,6 +46,6 @@ public class SettingsSteps extends AbstractStep {
         actualModel.setState(new CheckProfile(driver, "State").getValue());
         actualModel.setCity(new CheckProfile(driver,"City").getValue());
         actualModel.setZip(new CheckProfile(driver,"Zip").getValue());
-        return new ProfileModel();
+        return actualModel;
     }
 }

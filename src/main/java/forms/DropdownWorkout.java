@@ -35,7 +35,6 @@ public class DropdownWorkout extends AbstractComponent {
         explicitlyWait.until(ExpectedConditions.visibilityOfElementLocated(optionLocator));
         WebElement element2 = wait.until(ExpectedConditions.elementToBeClickable(optionLocator));
         ((JavascriptExecutor)driver).executeScript("arguments[0].click();", element2);
-
     }
 
     public void selectOption2( String optionName) {
