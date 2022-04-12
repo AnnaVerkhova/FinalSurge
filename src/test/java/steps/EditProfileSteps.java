@@ -8,23 +8,17 @@ import io.qameta.allure.Step;
 import model.ProfileModel;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import pages.EditProfilePage;
 import pages.SettingsPage;
-
-
-
 public class EditProfileSteps extends AbstractStep {
-
-    private EditProfilePage editProfilePage;
-    SettingsPage settingsPage = new SettingsPage(driver);
-
 
 
     public EditProfileSteps(WebDriver driver) {
         super(driver);
     }
 
-    @Step("Создание нового профиля")
+    SettingsPage settingsPage = new SettingsPage(driver);
+
+    @Step("Create a new profile")
     public SettingsSteps createNewProfile(ProfileModel profileModel) {
         CreateProfileFormComponent form = new CreateProfileFormComponent(driver);
         Assert.assertTrue(
@@ -37,7 +31,7 @@ public class EditProfileSteps extends AbstractStep {
         return new SettingsSteps(driver);
     }
 
-    @Step("Заполнение данными созданного профиля")
+    @Step("Fill in  the data")
     public void fillProfileForm(ProfileModel profileModel) {
         new SelectProfile(driver, "Gender").clickGender();
         new InputProfile(driver, "Birthday").insertBirthDay(profileModel.getBirthday());

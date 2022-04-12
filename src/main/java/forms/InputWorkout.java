@@ -18,7 +18,7 @@ public class InputWorkout extends AbstractComponent {
     private String label;
     private By inputLocator;
 
-    Logger log = LogManager.getLogger(FinalLoginPage.class);
+    Logger log = LogManager.getLogger(InputWorkout.class);
 
     public InputWorkout(WebDriver driver,String label) {
         super(driver);
@@ -27,12 +27,12 @@ public class InputWorkout extends AbstractComponent {
     }
 
    public void clickHowIFeel(){
-       log.info("Click [{}] How I Feel field ","How I Feel");
+       log.info("Click [{}] field ","How I Feel");
         driver.findElement(HOW_I_FEEL).click();
    }
 
     public void clickCheckBoxMarkAsRace(){
-        log.info("Click [{}]  Mark as Race checkbox ","Mark As Race");
+       log.info("Click [{}]  checkbox ","Mark As Race");
         driver.findElement(IS_RACE).click();
     }
 
@@ -42,7 +42,7 @@ public class InputWorkout extends AbstractComponent {
     }
 
     public void input(String text) {
-        log.info("Click [{}] Is Race field ","Is Race");
+       log.info("Click [{}] field ","Is Race");
         driver.findElement(inputLocator).sendKeys(text);
     }
 

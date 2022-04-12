@@ -19,7 +19,7 @@ public class AddWorkoutSteps extends AbstractStep {
 
     AddWorkoutPage addWorkoutPage = new AddWorkoutPage(driver);
 
-    @Step("Добавить тренировку")
+    @Step("Adding workout")
     public AddWorkoutSteps addWorkout(){
         homePage = new HomePage(driver);
         homePage.openAddWorkoutButton();
@@ -27,7 +27,7 @@ public class AddWorkoutSteps extends AbstractStep {
         return this;
     }
 
-    @Step("Заполнение и сохранение тренировки")
+    @Step("Filling and saving the workout")
     public AddWorkoutSteps createNewWorkout(WorkoutModel workoutModel){
         addWorkoutPage.addRunningWorkout();
         fillAccountForm(workoutModel);
@@ -36,7 +36,7 @@ public class AddWorkoutSteps extends AbstractStep {
 
     }
 
-    @Step("Заполнение данных")
+    @Step("Fill in  the data")
     private void fillAccountForm(WorkoutModel workoutModel){
 
         new InputWorkout(driver, "Name").input(workoutModel.getWorkoutName());
@@ -54,7 +54,7 @@ public class AddWorkoutSteps extends AbstractStep {
 
     }
 
-    @Step("Проверка правильно созданной тренировки")
+    @Step("Validation of a properly Created Workout")
     public void validateWorkoutCreated(WorkoutModel expectedModel) {
         WorkoutModel actualModel = getCreatedWorkout();
         Assert.assertEquals(
@@ -64,18 +64,17 @@ public class AddWorkoutSteps extends AbstractStep {
         );
     }
 
-    @Step("Актуальные данные созданной тренировки")
+    @Step("Actual data of created workout")
     private WorkoutModel getCreatedWorkout( ) {
-        WorkoutModel workoutModel = new WorkoutModel();
-        workoutModel.setDistance(new CreatedWorkoutComponent(driver, "Workout Statistics:").getValueWorkout());
-        workoutModel.setRun(new CreatedWorkoutComponent(driver, "Run").getValueWorkout());
-        workoutModel.setMarkAsRace(new CreatedWorkoutComponent(driver, "Race Results:").getValueWorkout());
-        workoutModel.setOverallPlace(new CreatedWorkoutComponent(driver, "Overall Place:").getValueWorkout());
-        workoutModel.setAgeGroupPlace(new CreatedWorkoutComponent(driver, "Age Group Place:").getValueWorkout());
-        workoutModel.setHowIFelt(new CreatedWorkoutComponent(driver, "How I Felt:").getValueWorkout());
-        workoutModel.setPerceivedEffort(new CreatedWorkoutComponent(driver, "Perceived Effort").getValueWorkout());
-        workoutModel.setMinHR(new CreatedWorkoutComponent(driver, "Min HR:").getValueMinAndCalories());
-        workoutModel.setCaloriesBurned(new CreatedWorkoutComponent(driver, "Calories Burned:").getValueMinAndCalories());
-        return new WorkoutModel();
+        WorkoutModel actualModel = new WorkoutModel();
+        actualModel.setDistance(new CreatedWorkoutComponent(driver, "Workout Statistics:").getValueWorkoutStatistics());
+        actualModel.setRun(new CreatedWorkoutComponent(driver, "Run").getValueRunning());
+        actualModel.setOverallPlace(new CreatedWorkoutComponent(driver, "Overall Place:").getValueOverallPlace());
+        actualModel.setAgeGroupPlace(new CreatedWorkoutComponent(driver, "Age Group Place:").getValueAgeGroupPlace());
+        actualModel.setHowIFelt(new CreatedWorkoutComponent(driver, "How I Felt:").getValueHowIFElt());
+        actualModel.setPerceivedEffort(new CreatedWorkoutComponent(driver, "Perceived Effort").getValuePerceivedEffort());
+        actualModel.setMinHR(new CreatedWorkoutComponent(driver, "Min HR:").getValueMinHR());
+        actualModel.setCaloriesBurned(new CreatedWorkoutComponent(driver, "Calories Burned:").getValueCaloriesBurned());
+        return actualModel;
     }
 }

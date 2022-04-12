@@ -2,13 +2,11 @@ package model;
 
 import lombok.Data;
 
-
 @Data
 public class WorkoutModel {
     String WorkoutName;
-    String WorkoutDescription;
     String Distance;
-    double Duration;
+    String Duration;
     int Pace;
     String HowIFelt;
     String MinHR;
@@ -21,7 +19,7 @@ public class WorkoutModel {
     String Run;
 
     public WorkoutModel() {
+
     }
+
 }
-
-

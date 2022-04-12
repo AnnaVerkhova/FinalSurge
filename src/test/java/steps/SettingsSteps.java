@@ -17,7 +17,7 @@ public class SettingsSteps extends AbstractStep {
         super(driver);
     }
 
-    @Step("Открывается страница профиля")
+    @Step("The profile page opens")
     public EditProfileSteps openEditProfilePage() {
         settingsPage = new SettingsPage(driver);
         settingsPage.openEditProfileForm();
@@ -26,7 +26,7 @@ public class SettingsSteps extends AbstractStep {
         return new EditProfileSteps(driver);
     }
 
-    @Step("Проверка созданного профиля")
+    @Step("Validation of created profile")
     public void validateProfileCreated(ProfileModel expectedModel) {
         ProfileModel actualModel = getActualProfile();
         Assert.assertEquals(
@@ -35,7 +35,7 @@ public class SettingsSteps extends AbstractStep {
                 String.format("Account is not valid: %s", actualModel)
         );
     }
-
+    @Step("Get actual profile")
     private ProfileModel getActualProfile( ) {
         ProfileModel actualModel = new ProfileModel();
         actualModel.setGender(new CheckProfile(driver, "Gender").getValue());

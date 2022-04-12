@@ -22,7 +22,7 @@ public class DropdownWorkout extends AbstractComponent {
     private static final String OPTION_LIST_PATTERN_TIME = "//ul//li[contains(.,'%s')]";
      private static final String OPTION_LIST_PATTERN_EFFORT = "//option[contains(.,'%s')]";
 
-    Logger log = LogManager.getLogger(FinalLoginPage.class);
+    Logger log = LogManager.getLogger(DropdownWorkout.class);
 
     public DropdownWorkout(WebDriver driver, String label) {
         super(driver);
@@ -33,10 +33,10 @@ public class DropdownWorkout extends AbstractComponent {
 
     public void selectOption(String optionName) {
         WebDriverWait wait = new WebDriverWait(driver, 10);
+        log.info("Select [{}]","optionName");
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(DROPDOWN_LOCATOR_PATTERN_TIME));
         ((JavascriptExecutor)driver).executeScript("arguments[0].click();", element);
-        By optionLocator = By.xpath(String.format(OPTION_LIST_PATTERN_TIME,optionName));
-
+            By optionLocator = By.xpath(String.format(OPTION_LIST_PATTERN_TIME,optionName));
         explicitlyWait.until(ExpectedConditions.visibilityOfElementLocated(optionLocator));
         WebElement element2 = wait.until(ExpectedConditions.elementToBeClickable(optionLocator));
         ((JavascriptExecutor)driver).executeScript("arguments[0].click();", element2);
@@ -44,6 +44,7 @@ public class DropdownWorkout extends AbstractComponent {
     }
 
     public void selectOption2( String optionName) {
+        log.info("Select [{}]","optionName");
         driver.findElement(DROPDOWN_LOCATOR_PATTERN_EFFORT);
         By optionLocator = By.xpath(String.format(OPTION_LIST_PATTERN_EFFORT,optionName));
         explicitlyWait.until(ExpectedConditions.visibilityOfElementLocated(optionLocator));

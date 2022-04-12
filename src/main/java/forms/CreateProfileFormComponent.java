@@ -32,8 +32,6 @@ public class CreateProfileFormComponent extends AbstractComponent {
     }
     public void save() {
         WebElement button = driver.findElement(SAVE_BUTTON);
-        System.out.printf("button is displayed: %s\n", button.isDisplayed());
-        System.out.printf("button is enabled: %s\n", button.isEnabled());
         log.info("Click [{}] button ","save");
         button.click();
     }
