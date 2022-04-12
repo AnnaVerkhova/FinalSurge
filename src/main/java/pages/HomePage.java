@@ -49,12 +49,12 @@ public class HomePage extends BasePage {
         WebElement we = driver.findElement(HOMEPAGE_WORKOUTS);
         action.moveToElement(we).build().perform();
         explicitlyWait.until(ExpectedConditions.visibilityOfElementLocated(HOMEPAGE_ADDWORKOUT));
-        driver.findElement(HOMEPAGE_ADDWORKOUT).click();
+        driver.findElement(HOMEPAGE_ADDWORKOUT).click();}
 
-        public void clickLogout () {
+        public void clickLogout(){
             log.info("Click [{}]", "Logout");
             driver.findElement(LOGOUT).click();
         }
     }
-}
+
 
