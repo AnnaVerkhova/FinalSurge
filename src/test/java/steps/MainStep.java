@@ -4,12 +4,16 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import pages.*;
 import utils.PropertyUtils;
+
+
 public class MainStep extends AbstractStep {
 
     private FinalLoginPage loginPage;
     private HomePage homePage;
     private SettingsPage settingsPage;
+    private EditProfilePage editProfilePage;
     private AddWorkoutSteps addWorkoutSteps;
+    private LogoutPage logoutPage;
 
     private static final String VALID_LOGIN = PropertyUtils.getEnv("login");
     public static final String VALID_PASSWORD =PropertyUtils.getEnv("password");
@@ -49,6 +53,15 @@ public class MainStep extends AbstractStep {
         addWorkoutSteps.addWorkout();
         validatePageIsLoaded(new AddWorkoutPage(driver));
         return new AddWorkoutSteps(driver);
+    }
+
+    @Step("Logout")
+    public MainStep logout(){
+        homePage = new HomePage(driver);
+        homePage.clickLogout();
+        logoutPage = new LogoutPage(driver);
+        validatePageIsLoaded(new LogoutPage(driver));
+        return this;
     }
 }
 

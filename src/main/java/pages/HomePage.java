@@ -4,14 +4,11 @@ import components.buttons.SettingsButton;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.devtools.idealized.Javascript;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 
 public class HomePage extends BasePage {
@@ -20,8 +17,8 @@ public class HomePage extends BasePage {
     public static final By HEADER = By.xpath("//a[contains(.,'Dashboard')]");
     public static final By HOMEPAGE_WORKOUTS = By.xpath("//div[@id='fade-menu']//a[@class='arrow_down' and contains(.,'Workouts')]");
     public static final By HOMEPAGE_ADDWORKOUT = By.xpath("//div[@id='fade-menu']//a[contains(.,'Add Workout')]");
+    public static final By LOGOUT = By.xpath("//a[contains(.,'Logout')]");
 
-    // public static final By HOMEPAGE_WORKOUTS_WEB= By.xpath("//div[@id='fade-menu']//a[@class='arrow_down' and contains(.,'Workouts')]");
 
     Logger log = LogManager.getLogger(HomePage.class);
 
@@ -42,7 +39,7 @@ public class HomePage extends BasePage {
     }
 
     public void openSettingsPage() {
-        log.info("Click [{}] button ","Settings");
+        log.info("Click [{}] button ", "Settings");
         driver.findElement(SettingsButton.SETTINGS_BUTTON_LABEL).click();
     }
 
@@ -50,10 +47,14 @@ public class HomePage extends BasePage {
         log.info("Imitation of computer mouse");
         Actions action = new Actions(driver);
         WebElement we = driver.findElement(HOMEPAGE_WORKOUTS);
-        action.moveToElement(we).perform();
+        action.moveToElement(we).build().perform();
         explicitlyWait.until(ExpectedConditions.visibilityOfElementLocated(HOMEPAGE_ADDWORKOUT));
         driver.findElement(HOMEPAGE_ADDWORKOUT).click();
 
+        public void clickLogout () {
+            log.info("Click [{}]", "Logout");
+            driver.findElement(LOGOUT).click();
+        }
     }
 }
 

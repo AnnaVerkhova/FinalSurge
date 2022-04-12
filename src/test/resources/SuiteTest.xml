@@ -17,6 +17,13 @@
             </class>
         </classes>
     </test>
+    <test name="test 3">
+        <parameter name="keyword" value="keyValue"/>
+        <classes>
+            <class name="finalsurge.LogoutTest">
+            </class>
+        </classes>
+    </test>
 </suite>
 
 

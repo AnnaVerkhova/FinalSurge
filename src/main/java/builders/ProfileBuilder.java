@@ -9,6 +9,19 @@ public class ProfileBuilder {
         this.profileModel = profileModel;
     }
 
+    public static ProfileBuilder defaultProfile() {
+        ProfileModel profileModel = new ProfileModel();
+        profileModel.setGender("Female");
+        profileModel.setBirthday("11/20/1991");
+        profileModel.setWeight("48");
+        profileModel.setWeightType("kg");
+        profileModel.setCountry("Belarus");
+        profileModel.setState("Minskaya voblasts");
+        profileModel.setCity("Borisov");
+        profileModel.setZip("202101");
+        return new ProfileBuilder(profileModel);
+    }
+
     ProfileModel profileModel = new ProfileModel();
 
     public static ProfileBuilder newValues() {
@@ -17,15 +30,6 @@ public class ProfileBuilder {
 
     public ProfileBuilder() {}
 
-
-    public ProfileBuilder setName(String name){
-        this.profileModel.setName(name);
-        return this;
-    }
-    public ProfileBuilder setEmail(String email){
-        this.profileModel.setEmail(email);
-        return this;
-    }
     public ProfileBuilder setGender(String gender){
         this.profileModel.setGender(gender);
         return this;

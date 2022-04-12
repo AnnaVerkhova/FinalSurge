@@ -20,6 +20,7 @@ public class BaseTest {
     public void setup() {
         driver = new ChromeDriver(CapabilitiesGenerator.getChromeOptions());
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+        driver.manage().window().setSize(new Dimension(1920, 1080));
         mainStep = new MainStep(driver);
         driver.manage().window().setSize(new Dimension(1920, 1080));
 

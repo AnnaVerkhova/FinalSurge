@@ -35,7 +35,7 @@ public class EditProfileSteps extends AbstractStep {
     public void fillProfileForm(ProfileModel profileModel) {
         new SelectProfile(driver, "Gender").clickGender();
         new InputProfile(driver, "Birthday").insertBirthDay(profileModel.getBirthday());
-        new InputProfile(driver, "Weight").insert(String.valueOf(profileModel.getWeight()));
+        new InputProfile(driver, "Weight").insert(profileModel.getWeight());
         new SelectProfile(driver, "WeightType").clickKg();
         new InputProfile(driver, "City").insert(profileModel.getCity());
         new InputProfile(driver, "Zip").insert(profileModel.getZip());
