@@ -72,9 +72,6 @@
                             </property>
                         </systemProperties>
                     </systemPropertyVariables>
-<!--                    <suiteXmlFiles>-->
-<!--                        <suiteXmlFile>${testNgSuiteFilePath}${suite}.xml</suiteXmlFile>-->
-<!--                    </suiteXmlFiles>-->
                 </configuration>
                 <dependencies>
                     <dependency>
