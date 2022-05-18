@@ -7,6 +7,7 @@ I used this site for  graduation project.
 
 
 ### Checklist
+
 |Page|Test name|Automated|
 |----|----|------|
 |Login page| Valid login|+|

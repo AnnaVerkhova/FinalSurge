@@ -10,4 +10,5 @@ public class EditProfileButton extends MenuButton {
     public EditProfileButton(WebDriver driver) {
         super(driver, String.valueOf(EDITPROFILE_BUTTON_LABEL));
     }
+
 }

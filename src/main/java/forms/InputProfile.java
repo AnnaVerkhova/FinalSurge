@@ -9,7 +9,6 @@ import org.openqa.selenium.WebDriver;
 
 public class InputProfile extends AbstractComponent {
 
-
     public static final String INPUT_LOCATOR_PATTERN =
             "//label[contains(.,'%s')]/ancestor::div[contains(@class,'formSep')]//input";
 

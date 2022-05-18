@@ -13,7 +13,6 @@ public class MenuButton extends AbstractComponent {
     private String label;
     private By buttonLocator;
 
-
     public MenuButton(WebDriver driver,String label) {
         super(driver);
         this.label=label;

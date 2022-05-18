@@ -29,7 +29,6 @@ public class CheckProfile extends AbstractComponent {
         return true;
     }
 
-
     public String getValue() {
         return driver.findElement(textFieldLocator).getText().split(":")[1].trim();
     }

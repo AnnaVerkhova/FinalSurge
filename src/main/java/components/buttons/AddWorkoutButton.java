@@ -9,4 +9,5 @@ public class AddWorkoutButton extends MenuButton{
     public AddWorkoutButton(WebDriver driver) {
         super(driver, SETTINGS_BUTTON_LABEL);
     }
+
 }

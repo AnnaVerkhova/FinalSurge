@@ -14,4 +14,5 @@ public class AbstractStep {
     protected void validatePageIsLoaded(BasePage page){
         Assert.assertTrue(page.isPageLoaded(),page.getClass().getSimpleName().concat("is not opened: "));
     }
+
 }

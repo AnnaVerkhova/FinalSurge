@@ -11,5 +11,6 @@ public class SettingsButton extends MenuButton {
     public SettingsButton(WebDriver driver) {
         super(driver, String.valueOf(SETTINGS_BUTTON_LABEL));
     }
+
 }
 

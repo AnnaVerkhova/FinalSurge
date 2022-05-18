@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class FinalLoginPage extends BasePage{
 
+
     public static final String BASE_URL = "https://log.finalsurge.com/";
     public static final By EMAIL = By.cssSelector("[name='login_name']");
     public static final By PASSWORD = By.cssSelector("[name='login_password']");

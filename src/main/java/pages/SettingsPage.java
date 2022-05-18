@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class SettingsPage extends BasePage{
 
+
     private static final String BASE_URL = "https://log.finalsurge.com/UserProfile/";
     public static final By HEADER =By.xpath("//h4[contains(.,'User Profile')]");
 

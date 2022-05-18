@@ -16,7 +16,6 @@ public abstract class BasePage {
         this.explicitlyWait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-
     abstract public void waitPageLoaded();
 
     abstract public BasePage openPage();

@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 
 public class SelectProfile extends AbstractComponent {
 
+
     public static final By SELECT_LOCATOR_GENDER=By.xpath("//div[@class='formSep']//label[@class='radio inline']//input[@value='f']");
 
     public static final By SELECT_LOCATOR_KG =By.xpath("//div[@class='formSep']//label[@class='radio inline']//input[@value='k']");

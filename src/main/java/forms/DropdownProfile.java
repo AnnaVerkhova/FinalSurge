@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class DropdownProfile extends AbstractComponent {
 
+
     private static final String DROPDOWN_LOCATOR_PATTERN =
             "//label[contains(.,'%s')]/ancestor::div[contains(@class,'formSep')]//select";
     private String label;
